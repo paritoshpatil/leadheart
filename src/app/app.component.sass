@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap")
+
+@font-face
+    font-family: "Narnia"
+    src: url("../assets/fonts/Narnia.otf")
+
+@font-face
+    font-family: "Getaway"
+    src: url("../assets/fonts/Getaway.otf")
+
+.inverted-cursor
+    width: 20px
+    height: 20px
+    background: rgb(255, 255, 255)
+    position: absolute
+    border-radius: 50%
+    box-sizing: border-box
+    pointer-events: none
+    transition: 100ms ease-out
+    mix-blend-mode: difference
+    transform: translate(-50%, -50%)
+    z-index: 100
+
+.cursor-expand
+    width: 100px
+    height: 100px
+
+.center-div
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    text-align: center
+
+.title-card
+    color: white
+    font-size: 3rem
+    font-weight: 700
+    font-family: "Inter"
+    // letter-spacing: 0.2rem
+    margin: 0px
+    display: block
+
+.secondary-title-card
+    color: white
+    font-size: 2.5rem
+    font-weight: 700
+    font-family: "Inter"
+
+.subtitle-card
+    color: white
+    font-size: 1.5rem
+    margin-top: 1rem
+    letter-spacing: 1rem
+    font-family: "Inter"
+    font-weight: 200
+    display: block
+
+.navbar-top
+    position: absolute
+    top: 0
+    right: 0
+    color: white
+    font-size: 1.2rem
+
+.navbar-bottom
+    position: absolute
+    bottom: 0
+    left: 0
+    color: white
+    font-size: 1.2rem
+
+.nav-item
+    margin: 4rem 2rem
+    writing-mode: vertical-rl
+    text-orientation: mixed
+
+.nav-img
+    margin: 2rem 0
+    writing-mode: vertical-rl
+    text-orientation: mixed
+
+    z-index: -1
+    width: 30px
+    height: 30px
+    filter: invert(100%)
+
+.general-info
+    background-color: #010001
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 5rem
+
+.circle-image
+    width: 15rem
+    height: 15rem
+    border-radius: 50%
+
+.info-list
+    padding: 0
+    margin-top: 2.5rem
+    line-height: 1.4
+
+.info-list-element
+    color: white
+    font-size: 2.5rem
+    font-weight: 700
+    text-align: center
+
+.info-content
+    color: white
+    font-size: 1.2rem
+    font-weight: 400
+    text-align: justify
+    width: 40%
+
+.vl
+    border-left: 1px solid white
+    height: 300px
+
+.track-frame
+    z-index: 0
+
+.tracks
+    padding: 10%
+    text-align: center

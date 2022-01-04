@@ -1,0 +1,41 @@
+p
+    color: white
+
+.grid
+    display: grid
+    gap: 1rem
+    text-align: center
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))
+
+.cover-image
+    width: 8rem
+    height: 8rem
+    aspect-ratio: 1/1
+
+.track-element
+    padding: 1.5rem
+    border: 2px dashed white
+    border-radius: 8px
+    display: flex
+    flex-direction: row
+    margin: 2rem 1rem
+
+    transition: 200ms ease-out
+
+    &:hover
+        border: 2px solid white
+        transform: translateY(-10px)
+        background: rgb(255,255,255, 0.2)
+
+.track-name
+    margin-left: 1.2rem
+    text-align: left
+
+    h2
+        font-size: 1.8rem
+
+    span
+        text-decoration: none
+        color: white
+        font-style: italic
+        font-size: 1.2rem

@@ -1,0 +1,15 @@
+<section class="grid">
+    <div *ngFor='let track of topTracks'>
+        <a href={{track.external_urls.spotify}} class="track-element">
+            <img src={{track.album.images[0].url}} alt="" srcset="" class="cover-image">
+
+            <div class="track-name">
+                <h2 style="color: white;">{{track.name}}</h2>
+                <span *ngFor="let artist of track.artists">
+                    {{track.artists[0].name}} &nbsp;
+                </span>
+            </div>
+
+        </a>
+    </div>
+</section>

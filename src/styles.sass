@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+::-moz-selection
+    background: #ff245c50
+
+::selection
+    background: #ff245c50
+
+/* width */
+::-webkit-scrollbar
+    width: 10px
+
+/* Track */
+::-webkit-scrollbar-track
+    background-color: transparent
+
+/* Handle */
+::-webkit-scrollbar-thumb
+    border-radius: 10px
+    transition: opacity 150ms ease-out
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover
+    background: white
+
+html
+    cursor: none
+    margin: 0
+    padding: 0
+    overflow-x: hidden
+    overflow-y: overlay
+    outline: none
+
+body
+    margin: 0
+    padding: 0
+    font-family: "Inter", sans-serif
+    background: black
+
+a
+    text-decoration: none
+    cursor: none
+    &:visited,
+    &:active,
+    &:hover
+        color: inherit
+
+ul
+    list-style-type: none
