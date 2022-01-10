@@ -7,8 +7,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./spotify-track.component.sass'],
 })
 export class SpotifyTrackComponent implements OnInit {
-  // artistId: string = '6JgVrOl5nLrdaT6qOSbh1K';  //leadheart
-  artistId: string = '6i50rQJbETLRREwFn3plcw'; //lifafa
+  artistId: string = '6JgVrOl5nLrdaT6qOSbh1K'; //leadheart
+  // artistId: string = '6i50rQJbETLRREwFn3plcw'; //lifafa
   oauthToken!: string;
   market: string = 'IN';
   contentType: string = 'application/json';

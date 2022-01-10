@@ -90,7 +90,7 @@
     display: flex
     flex-direction: column
     align-items: center
-    padding: 5rem
+    padding: 5vh 15vw
 
 .circle-image
     width: 15rem
@@ -127,6 +127,11 @@
     text-align: center
 
 @media only screen and (max-width: 768px)
+
+    body
+        overflow-x: hidden
+        width: 100vw
+
     .navbar-top
         display: none
 
@@ -138,3 +143,9 @@
 
     #bg-video
         max-height: 100vh
+
+    .info-content
+        width: 100%
+
+    .general-info
+        padding: 15vw
