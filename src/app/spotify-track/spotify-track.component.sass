@@ -3,13 +3,14 @@ p
 
 .grid
     display: grid
+    margin: 0
     gap: 1rem
     text-align: center
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))
 
 .cover-image
-    width: 8rem
-    height: 8rem
+    width: 12vh
+    height: 12vh
     aspect-ratio: 1/1
 
 .track-element
@@ -39,3 +40,13 @@ p
         color: white
         font-style: italic
         font-size: 1.2rem
+
+@media only screen and (max-width: 768px)
+    .track-element
+        flex-direction: column
+        align-items: center
+        width: 30vh
+
+    .track-name
+        margin-left: 0
+        text-align: center
