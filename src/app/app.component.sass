@@ -16,7 +16,7 @@
     border-radius: 50%
     box-sizing: border-box
     pointer-events: none
-    transition: 100ms ease-out
+    transition: 50ms ease-out
     mix-blend-mode: difference
     transform: translate(-50%, -50%)
     z-index: 100
@@ -34,7 +34,7 @@
 
 .title-card
     color: white
-    font-size: 5vh
+    font-size: 3rem
     font-weight: 700
     font-family: "Inter"
     // letter-spacing: 0.2rem
@@ -43,13 +43,13 @@
 
 .secondary-title-card
     color: white
-    font-size: 4vh
+    font-size: 2.5rem
     font-weight: 700
     font-family: "Inter"
 
 .subtitle-card
     color: white
-    font-size: 2.5vh
+    font-size: 1.5rem
     margin-top: 1rem
     letter-spacing: 1rem
     font-family: "Inter"
@@ -90,7 +90,7 @@
     display: flex
     flex-direction: column
     align-items: center
-    padding: 5vh 15vw
+    padding: 5rem
 
 .circle-image
     width: 15rem
@@ -125,27 +125,3 @@
 .tracks
     padding: 10%
     text-align: center
-
-@media only screen and (max-width: 768px)
-
-    body
-        overflow-x: hidden
-        width: 100vw
-
-    .navbar-top
-        display: none
-
-    .navbar-bottom
-        display: none
-
-    .subtitle-card
-        display: none
-
-    #bg-video
-        max-height: 100vh
-
-    .info-content
-        width: 100%
-
-    .general-info
-        padding: 15vw
