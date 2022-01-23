@@ -14,8 +14,8 @@ export class AppComponent {
 
   @HostListener('document:mousemove', ['$event'])
   onMousemove($event: { pageY: number; pageX: number }) {
-    this.top = $event.pageY - 10 + 'px';
-    this.left = $event.pageX - 10 + 'px';
+    this.top = $event.pageY + 'px';
+    this.left = $event.pageX + 'px';
   }
 
   increaseCursorSize() {

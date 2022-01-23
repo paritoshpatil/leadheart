@@ -16,7 +16,7 @@
     border-radius: 50%
     box-sizing: border-box
     pointer-events: none
-    transition: 100ms ease-out
+    transition: 50ms ease-out
     mix-blend-mode: difference
     transform: translate(-50%, -50%)
     z-index: 100
@@ -74,12 +74,28 @@
     margin: 4rem 2rem
     writing-mode: vertical-rl
     text-orientation: mixed
+    color: white
+
+    a
+        color: inherit
+
+.links-mobile
+    display: none
+
+.nav-img-mobile
+    margin: 0 5vw
+    writing-mode: horizontal-tb
+    text-orientation: sideways-right
+
+    display: inline
+
+    z-index: -1
+    width: 30px
+    height: 30px
+    filter: invert(100%)
 
 .nav-img
     margin: 2rem 0
-    writing-mode: vertical-rl
-    text-orientation: mixed
-
     z-index: -1
     width: 30px
     height: 30px
@@ -93,8 +109,8 @@
     padding: 5vh 15vw
 
 .circle-image
-    width: 15rem
-    height: 15rem
+    width: 15vw
+    height: 15vw
     border-radius: 50%
 
 .info-list
@@ -146,6 +162,20 @@
 
     .info-content
         width: 100%
+        font-size: 1rem
+
+    .info-list-element
+        font-size: 2rem
 
     .general-info
         padding: 15vw
+
+    .circle-image
+        width: 60vw
+        height: 60vw
+
+    .footer
+        font-size: 0.75rem
+
+    .links-mobile
+        display: inline
