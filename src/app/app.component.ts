@@ -18,9 +18,11 @@ export class AppComponent {
     this.left = $event.pageX + 'px';
   }
 
-  increaseCursorSize() {
-    this.height = '100px';
-    this.width = '100px';
+  increaseCursorSize($event: any) {
+    var rect = $event.target.getBoundingClientRect();
+    console.log(rect);
+    this.height = rect.height + 20 + 'px';
+    this.width = rect.width + 20 + 'px';
   }
 
   decreaseCursorSize() {

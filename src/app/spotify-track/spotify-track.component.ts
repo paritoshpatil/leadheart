@@ -84,5 +84,18 @@ export class SpotifyTrackComponent implements OnInit {
       });
   }
 
-  getArtist() {}
+  getArtist() {
+    const headers = new HttpHeaders()
+      .set('content-type', this.contentType)
+      .set('Authorization', 'Bearer ' + this.oauthToken)
+      .set('Accept', this.contentType);
+
+    this.http
+      .get<any>(`https://api.spotify.com/v1/artists/${this.artistId}`, {
+        headers: headers,
+      })
+      .subscribe((response: any) => {
+        console.log(response);
+      });
+  }
 }
