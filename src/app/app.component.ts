@@ -6,7 +6,7 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./app.component.sass'],
 })
 export class AppComponent {
-  title = 'Spotify-Test';
+  title = 'leadheart';
   top!: string;
   left!: string;
   height!: string;
@@ -28,5 +28,10 @@ export class AppComponent {
   decreaseCursorSize() {
     this.height = '20px';
     this.width = '20px';
+  }
+
+  playVideo() {
+    let video = <HTMLVideoElement>document.getElementById('bg-video');
+    video.play();
   }
 }

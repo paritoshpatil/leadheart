@@ -17,7 +17,7 @@
 
   <div class="center-div">
     <app-hoverable-text [text]="'leadheart'" (mouseover)="increaseCursorSize($event)" (mouseout)="decreaseCursorSize()"
-      class="title-card">
+      (click)="playVideo()" class="title-card">
     </app-hoverable-text>
   </div>
 
@@ -131,5 +131,6 @@
   </div>
   <div class="footer">
     <p>Made with ❤️ using Angular, SASS and Spotify.</p>
+    <p>(click on my name to make the birds fly)</p>
   </div>
 </body>
