@@ -26,8 +26,8 @@ export class AppComponent {
     
     var rect = $event.target.getBoundingClientRect();
     console.log(rect);
-    cursor.style.setProperty("--top", rect.top + rect.height / 2 + "px");
-    cursor.style.setProperty("--left", rect.left + rect.width / 2 + "px");
+    this.cursor.style.setProperty("--top", rect.top + rect.height / 2 + "px");
+    this.cursor.style.setProperty("--left", rect.left + rect.width / 2 + "px");
     this.height = rect.height + 20 + 'px';
     this.width = rect.width + 20 + 'px';
   }
@@ -35,8 +35,8 @@ export class AppComponent {
   decreaseCursorSize() {
     this.height = '20px';
     this.width = '20px';
-    cursor.style.setProperty("--translateX", 0);
-    cursor.style.setProperty("--translateY", 0);
+    this.cursor.style.setProperty("--translateX", 0);
+    this.cursor.style.setProperty("--translateY", 0);
   }
 
   playVideo() {
