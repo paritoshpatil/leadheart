@@ -12,7 +12,6 @@ export class AppComponent {
   height!: string;
   width!: string;
 
-  cursor = document.querySelector("#inverted-cursor")
   isCursorLocked: boolean = false
 
   @HostListener('document:mousemove', ['$event'])
@@ -26,17 +25,17 @@ export class AppComponent {
     
     var rect = $event.target.getBoundingClientRect();
     console.log(rect);
-    this.cursor.style.setProperty("--top", rect.top + rect.height / 2 + "px");
-    this.cursor.style.setProperty("--left", rect.left + rect.width / 2 + "px");
+    this.top = rect.top + rect.height / 2 + "px";
+    this.left = rect.left + rect.width / 2 + "px";
     this.height = rect.height + 20 + 'px';
     this.width = rect.width + 20 + 'px';
   }
 
   decreaseCursorSize() {
+    this.isCursorLocked = false;
+
     this.height = '20px';
     this.width = '20px';
-    this.cursor.style.setProperty("--translateX", 0);
-    this.cursor.style.setProperty("--translateY", 0);
   }
 
   playVideo() {
