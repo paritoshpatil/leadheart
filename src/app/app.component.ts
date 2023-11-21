@@ -12,6 +12,7 @@ export class AppComponent {
   height!: string;
   width!: string;
 
+  cursor = document.querySelector("#inverted-cursor")
   isCursorLocked: boolean = false
 
   @HostListener('document:mousemove', ['$event'])
