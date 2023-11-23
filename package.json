@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
     "buffer": "^6.0.3",
+    "ipad-cursor": "^0.5.2",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -41,8 +42,8 @@
   "browser": {
     "request": false
   },
-  "engines" : { 
-    "npm" : ">=18.0.0",
-    "node" : ">=18.0.0"
+  "engines": {
+    "npm": ">=18.0.0",
+    "node": ">=18.0.0"
   }
 }

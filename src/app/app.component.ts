@@ -1,43 +1,44 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import {
+  IpadCursorConfig,
+  IpadCursorStyle,
+  initCursor,
+  updateConfig,
+} from 'ipad-cursor';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'leadheart';
-  top!: string;
-  left!: string;
-  height!: string;
-  width!: string;
 
-  isCursorLocked: boolean = false
+  ngOnInit() {
+    const normalStyle: IpadCursorStyle = { background: 'white' };
+    const blockStyle: IpadCursorStyle = {
+      background: 'rgb(255,255,255)',
+      scale: 1.2,
+    };
+    const textStyle: IpadCursorStyle = {
+      background: 'rgb(255,255,255)',
+      radius: '5%',
+    };
 
-  @HostListener('document:mousemove', ['$event'])
-  onMousemove($event: { pageY: number; pageX: number }) {
-    if(!this.isCursorLocked) {
-      this.top = $event.pageY + 'px';
-      this.left = $event.pageX + 'px';
-    }
-  }
+    const config: IpadCursorConfig = {
+      normalStyle,
+      blockStyle,
+      textStyle,
+      adsorptionStrength: 3,
+      className: 'xxx',
+    };
+    initCursor(config);
+    // updateConfig({
+    //   adsorptionStrength: 30,
+    // });
 
-  increaseCursorSize($event: any) {
-    this.isCursorLocked = true
-    
-    var rect = $event.target.getBoundingClientRect();
-    console.log(rect);
-    this.top = rect.top + rect.height / 2 + "px";
-    this.left = rect.left + rect.width / 2 + "px";
-    this.height = rect.height + 20 + 'px';
-    this.width = rect.width + 20 + 'px';
-  }
-
-  decreaseCursorSize() {
-    this.isCursorLocked = false;
-
-    this.height = '20px';
-    this.width = '20px';
+    var cursorX: any = document.querySelector('.xxx');
+    cursorX.style.mixBlendMode = 'difference';
   }
 
   playVideo() {
