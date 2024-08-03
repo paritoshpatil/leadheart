@@ -1,12 +1,27 @@
-<section class="grid">
-    <div *ngFor='let track of topTracks'>
-        <a href={{track.external_urls.spotify}} class="track-element">
-            <img src={{track.album.images[0].url}} alt="" srcset="" class="cover-image">
+<section>
+  <div *ngIf="trackType === 'single'" class="grid">
+    <div *ngFor='let single of singles'>
+        <a href={{single.external_urls.spotify}} class="track-element">
+            <img src={{single.images[1].url}} alt="" srcset="" class="cover-image">
 
             <div class="track-name">
-                <h2 style="color: white;">{{track.name}}</h2>
+                <h2 style="color: white;">{{single.name}}</h2>
             </div>
 
         </a>
     </div>
+  </div>
+
+  <div *ngIf="trackType === 'album'" class="grid">
+    <div *ngFor='let album of albums'>
+        <a href={{album.external_urls.spotify}} class="track-element">
+            <img src={{album.images[1].url}} alt="" srcset="" class="cover-image" >
+
+            <div class="track-name">
+                <h2 style="color: white;">{{album.name}}</h2>
+            </div>
+
+        </a>
+    </div>
+  </div>
 </section>

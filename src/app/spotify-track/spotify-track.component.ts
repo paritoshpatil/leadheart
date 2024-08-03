@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+
+export type TrackType = 'single' | 'album';
 
 @Component({
   selector: 'app-spotify-track',
@@ -16,17 +19,20 @@ export class SpotifyTrackComponent implements OnInit {
   topTracks: any;
   albumCovers: any = [];
 
+
+  albums: any = [];
+  singles: any = [];
+  @Input() trackType: TrackType = 'single';
+
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    var client_id = 'b1f67cbbf69f448cb0d0d0ec4f7a2d59'; // Your client id
-    var client_secret = '4819ead624034032ba29df0f3588adff'; // Your secret
+    var client_id = environment.spotify_client_id; // Your client id
+    var client_secret = environment.spotify_client_secret; // Your secret
 
-    var querystring = require('querystring');
-
-    var bodyContent = {
+    var bodyContent : URLSearchParams = new URLSearchParams({
       grant_type: 'client_credentials',
-    };
+    });
 
     var headers = new HttpHeaders()
       .set(
@@ -37,12 +43,11 @@ export class SpotifyTrackComponent implements OnInit {
       .set('Content-Type', 'application/x-www-form-urlencoded');
     // .set('grant_type', 'client_credentials');
 
-    console.log(bodyContent);
 
     this.http
       .post<any>(
         'https://accounts.spotify.com/api/token',
-        querystring.stringify(bodyContent),
+        bodyContent.toString(),
         {
           headers: headers,
         }
@@ -55,6 +60,7 @@ export class SpotifyTrackComponent implements OnInit {
 
         console.log('GET TOP TRACKS RUN');
         this.getTopTracks();
+        this.getAlbums();
       });
   }
 
@@ -70,17 +76,11 @@ export class SpotifyTrackComponent implements OnInit {
         { headers: headers }
       )
       .subscribe((response: any) => {
-        console.log(response);
         this.topTracks = response.tracks;
 
-        console.log('TOPTRACKS');
-        console.log(this.topTracks);
         this.topTracks.forEach((element: any) => {
           this.albumCovers = [...this.albumCovers, element.album.images[0].url];
         });
-
-        console.log('ALBUM COVERS');
-        console.log(this.albumCovers);
       });
   }
 
@@ -96,6 +96,29 @@ export class SpotifyTrackComponent implements OnInit {
       })
       .subscribe((response: any) => {
         console.log(response);
+      });
+  }
+
+  getAlbums() {
+    const headers = new HttpHeaders()
+      .set('content-type', this.contentType)
+      .set('Authorization', 'Bearer ' + this.oauthToken)
+      .set('Accept', this.contentType);
+
+    this.http
+      .get<any>(`https://api.spotify.com/v1/artists/${this.artistId}/albums`, {
+        headers: headers,
+      })
+      .subscribe((response: any) => {
+        console.log(response);
+        response.items.forEach((element: any) => {
+            if (element.album_type === 'single') {
+              this.singles.push(element);
+            }
+            else if (element.album_type === 'album') {
+              this.albums.push(element);
+            }
+        });
       });
   }
 }

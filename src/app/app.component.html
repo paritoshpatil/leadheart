@@ -63,8 +63,16 @@
   </div>
 
   <div class="tracks">
-    <h1 class="secondary-title-card">Music</h1>
-    <app-spotify-track></app-spotify-track>
+    <div>
+    	<h1 class="secondary-title-card">Albums</h1>
+    	<app-spotify-track [trackType]="'album'"></app-spotify-track>
+    </div>
+    <div class="vl-xl"></div>
+
+    <div>
+    	<h1 class="secondary-title-card">Singles</h1>
+    	<app-spotify-track [trackType]="'single'"></app-spotify-track>
+    </div>
   </div>
 
   <div class="general-info">
